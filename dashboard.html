@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        nav {
+            width: 250px;
+            background-color: #1f1f1f;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav h2 {
+            color: #03dac6;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            color: #bbb;
+            text-decoration: none;
+            display: block;
+            padding: 12px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #333;
+            color: #03dac6;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .dashboard-container {
+            background-color: #1f1f1f;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        span {
+            color: #03dac6;
+        }
+
+        p {
+            color: #bbb;
+            margin-bottom: 25px;
+        }
+
+        button {
+            width: 150px;
+            padding: 10px;
+            background-color: #03dac6;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #00bfa5;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Sistema</h2>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Configurações</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="dashboard-container">
+            <h1>Bem-vindo, <span id="user-display">Usuário</span>!</h1>
+            <p>Você acessou o sistema com sucesso.</p>
+            <button onclick="logout()">Sair</button>
+        </div>
+    </main>
+
+    <script>
+        window.onload = function() {
+            const user = localStorage.getItem('usuario_logado') || 'Visitante';
+            document.getElementById('user-display').innerText = user;
+        };
+
+        function logout() {
+            localStorage.removeItem('usuario_logado');
+            window.location.href = 'index.html';
+        }
+    </script>
+
+</body>
+</html>
