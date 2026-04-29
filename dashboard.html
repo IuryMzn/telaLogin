@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controlo - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Barra Lateral -->
+    <aside>
+        <div class="logo">Nexus<span>Dash</span></div>
+        <nav>
+            <ul>
+                <li class="active"><span class="nav-icon">📊</span> <span>Dashboard</span></li>
+                <li><span class="nav-icon">👥</span> <span>Utilizadores</span></li>
+                <li><span class="nav-icon">💰</span> <span>Vendas</span></li>
+                <li><span class="nav-icon">📁</span> <span>Projetos</span></li>
+                <li><span class="nav-icon">⚙️</span> <span>Definições</span></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <header>
+            <div>
+                <h1>Bem-vindo, Administrador</h1>
+                <p style="color: var(--cor-texto-secundario);">Aqui está o resumo das atividades de hoje.</p>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar">AD</div>
+                <span>Admin User</span>
+            </div>
+        </header>
+
+        <!-- Grade de Estatísticas -->
+        <div class="stats-grid">
+            <div class="card">
+                <div class="card-title">Utilizadores Ativos</div>
+                <div class="card-value">1,284</div>
+                <div class="card-trend trend-up">▲ 12% desde o último mês</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Receita Mensal</div>
+                <div class="card-value">€ 14,500</div>
+                <div class="card-trend trend-up">▲ 8% em relação a ontem</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Taxa de Conversão</div>
+                <div class="card-value">3.4%</div>
+                <div class="card-trend trend-down">▼ 0.5% esta semana</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Novos Tickets</div>
+                <div class="card-value">24</div>
+                <div class="card-trend">4 pendentes de revisão</div>
+            </div>
+        </div>
+
+        <!-- Tabela de Atividades -->
+        <div class="recent-activity">
+            <div class="section-header">
+                <h2>Atividades Recentes</h2>
+                <button style="background: none; border: 1px solid var(--cor-primaria); color: var(--cor-primaria); padding: 5px 15px; border-radius: 5px; cursor: pointer;">Ver Tudo</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Produto</th>
+                        <th>Data</th>
+                        <th>Valor</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="activityTable">
+                    <!-- Dados inseridos via JS -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

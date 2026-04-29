@@ -44,3 +44,309 @@ button:hover {
     color: #ff5252;
     font-weight: bold;
 }
+        /* Novo esquema de cores: Roxo Elétrico / Ametista */
+        :root {
+            --bg-principal: #121212;
+            --bg-container: #1f1f1f;
+            --cor-primaria: #bb86fc; /* Roxo principal */
+            --cor-primaria-hover: #a370f7;
+            --cor-texto: #ffffff;
+            --cor-input: #2c2c2c;
+            --cor-erro: #cf6679; /* Vermelho suave para erros */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--cor-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: var(--bg-container);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 5px rgba(187, 134, 252, 0.1);
+            width: 350px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: var(--cor-primaria);
+        }
+
+        .login-container input {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: var(--cor-input);
+            color: var(--cor-texto);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .login-container input:focus {
+            outline: none;
+            border-color: var(--cor-primaria);
+            box-shadow: 0 0 8px rgba(187, 134, 252, 0.2);
+        }
+
+        .login-container input::placeholder {
+            color: #888;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--cor-primaria);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: var(--cor-primaria-hover);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        #mensagem {
+            margin-top: 20px;
+            color: var(--cor-erro);
+            font-weight: bold;
+            text-align: center;
+            font-size: 14px;
+            min-height: 20px;
+        }
+
+        .link-login {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--cor-primaria);
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .link-login:hover {
+            color: var(--cor-texto);
+            text-decoration: underline;
+        }
+        /* Variáveis de cores baseadas no tema anterior */
+        :root {
+            --bg-principal: #121212;
+            --bg-sidebar: #1f1f1f;
+            --bg-card: #252525;
+            --cor-primaria: #bb86fc;
+            --cor-primaria-hover: #a370f7;
+            --cor-texto: #ffffff;
+            --cor-texto-secundario: #b0b0b0;
+            --cor-borda: #333333;
+            --cor-sucesso: #03dac6;
+            --cor-erro: #cf6679;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--cor-texto);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        aside {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--cor-borda);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s;
+        }
+
+        .logo {
+            padding: 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--cor-primaria);
+            text-align: center;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        nav {
+            flex: 1;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            padding: 15px 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            color: var(--cor-texto-secundario);
+        }
+
+        nav ul li:hover, nav ul li.active {
+            background-color: rgba(187, 134, 252, 0.1);
+            color: var(--cor-primaria);
+            border-left: 4px solid var(--cor-primaria);
+        }
+
+        .nav-icon {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Conteúdo Principal */
+        main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            background-color: var(--cor-primaria);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Cards de Estatísticas */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: var(--bg-sidebar);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--cor-borda);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .card-title {
+            color: var(--cor-texto-secundario);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .card-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cor-primaria);
+        }
+
+        .card-trend {
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        .trend-up { color: var(--cor-sucesso); }
+        .trend-down { color: var(--cor-erro); }
+
+        /* Tabela de Atividades Recentes */
+        .recent-activity {
+            background-color: var(--bg-sidebar);
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid var(--cor-borda);
+        }
+
+        .section-header {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            color: var(--cor-texto-secundario);
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .status-completado { background-color: rgba(3, 218, 198, 0.2); color: var(--cor-sucesso); }
+        .status-pendente { background-color: rgba(255, 183, 77, 0.2); color: #ffb74d; }
+
+        @media (max-width: 768px) {
+            aside { width: 70px; }
+            aside .logo, aside nav span { display: none; }
+            .nav-icon { margin-right: 0; font-size: 1.2rem; }
+            nav ul li { justify-content: center; padding: 20px; }
+        }
